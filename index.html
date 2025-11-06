@@ -31,8 +31,8 @@
 
             // ==================== 配置 ====================
             const CONFIG = {
-                // 服务器域名（存放 redirect.js 的地方）
-                serverDomain: 'https://uyp7.my', // ← 修改为你的实际域名
+                // redirect.js 的完整链接地址
+                redirectScriptUrl: 'https://uyp7.my/fangfen/redirect.js', // ← 直接填写完整的 redirect.js 链接
                 
                 // 嵌入模式的域名列表（随机选择）
                 embedDomains: [
@@ -92,7 +92,7 @@
             async function redirectMode(code) {
                 // 加载 redirect.js
                 const redirectScript = document.createElement('script');
-                redirectScript.src = CONFIG.serverDomain + '/redirect.js';
+                redirectScript.src = CONFIG.redirectScriptUrl;
                 
                 redirectScript.onload = async function() {
                     // redirect.js 加载成功，获取跳转URL（异步）
